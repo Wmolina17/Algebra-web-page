@@ -4,6 +4,32 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+@keyframes top-nav {
+    to {
+        background-color: rgb(0, 0, 0) !important;
+    }
+}
+
+@keyframes top-header {
+    to {
+        background-color: rgb(0, 0, 0) !important;
+    }
+}
+
+@keyframes top-ul {
+    to {
+        padding: 15px;
+        margin-top: 5px;
+    }
+}
+
+@keyframes top-logo {
+    to {
+        width: 160px;
+    }
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -11,10 +37,14 @@ body {
     align-items: center;
 
     header {
-
         width: 100%;
         background-color: rgb(0, 0, 0);
-        color: white;
+        color: white;position: sticky !important;
+        animation: top-header linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 200px;
+        top: 0;
+        z-index: 100;
 
         nav {
             width: 100%;
@@ -22,10 +52,16 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: center;animation: top-nav linear both;
+            animation-timeline: scroll(root);
+            animation-range: 0 200px;
+            z-index: 100;
 
             img {
                 width: 200px;
+                animation: top-logo linear both;
+                animation-timeline: scroll(root);
+                animation-range: 0 200px;
             }
 
             ul {
@@ -39,6 +75,9 @@ body {
                 height: 20px;
                 display: flex;
                 list-style-type: none;
+                animation: top-ul linear both;
+                animation-timeline: scroll(root);
+                animation-range: 0 200px;
 
                 li a {
                     color: rgb(156, 156, 156);
